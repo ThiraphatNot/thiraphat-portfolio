@@ -478,3 +478,22 @@ ul { list-style: none; }
   .project-info-side { padding: 24px; }
   .contact-links { grid-template-columns: 1fr; }
 }
+
+@media (max-width: 768px) {
+
+  body {
+    overflow-y: auto;
+  }
+
+  .scroll-container {
+    overflow-y: auto;
+    scroll-snap-type: none;
+  }
+
+  .snap-section {
+    height: auto;
+    min-height: 100vh;
+    padding: 40px 0;
+  }
+
+}
