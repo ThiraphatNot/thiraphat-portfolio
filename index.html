@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="th" data-theme="light" data-lang="th">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thiraphat Ladda</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="shortcut icon" href="favicon.ico" type="x-icon">
+<link rel="manifest" href="site.webmanifest">
+
+</head>
+<body>
+
+  <!-- ░░ CURSOR GLOW ░░ -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- ░░ NAV ░░ -->
+  <nav class="nav" id="nav">
+    <a href="#home" class="nav__logo">
+      <img src="logo.png" alt="Thiraphat Ladda" class="logo-light"/>
+    </a>
+
+    <ul class="nav__links" id="navLinks">
+      <li><a href="#home"    data-th="หน้าแรก"   data-en="Home">หน้าแรก</a></li>
+      <li><a href="#about"   data-th="เกี่ยวกับ"  data-en="About">เกี่ยวกับ</a></li>
+      <li><a href="#skills"  data-th="ทักษะ"      data-en="Skills">ทักษะ</a></li>
+      <li><a href="#work"    data-th="ผลงาน"      data-en="Work">ผลงาน</a></li>
+      <li><a href="#contact" data-th="ติดต่อ"     data-en="Contact">ติดต่อ</a></li>
+    </ul>
+
+    <div class="nav__controls">
+      <!-- LANG TOGGLE -->
+      <button class="ctrl-btn lang-toggle" id="langToggle" aria-label="Toggle language">
+        <span class="lang-th">TH</span>
+        <span class="lang-sep">/</span>
+        <span class="lang-en">EN</span>
+      </button>
+      <!-- THEME TOGGLE -->
+      <button class="ctrl-btn theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <span class="icon-sun">☀️</span>
+        <span class="icon-moon">🌙</span>
+      </button>
+      <!-- BURGER -->
+      <button class="burger" id="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ░░ SECTION DOTS ░░ -->
+  <div class="section-dots" id="sectionDots">
+    <button class="dot active" data-target="home"    aria-label="Home"></button>
+    <button class="dot"        data-target="about"   aria-label="About"></button>
+    <button class="dot"        data-target="skills"  aria-label="Skills"></button>
+    <button class="dot"        data-target="work"    aria-label="Work"></button>
+    <button class="dot"        data-target="contact" aria-label="Contact"></button>
+  </div>
+
+  <!-- ░░ MAIN SCROLL CONTAINER ░░ -->
+  <main class="scroll-container" id="scrollContainer">
+
+    <!-- ═══════════════════════════
+         SECTION 1 — HERO
+    ════════════════════════════ -->
+    <section class="snap-section hero-section" id="home">
+      <canvas class="hero-canvas" id="heroCanvas"></canvas>
+      <div class="hero-content">
+        <div class="hero-left">
+          <p class="hero-eyebrow">
+            <span class="eyebrow-dot"></span>
+            <span data-th="Developer & Mechatronics Engineer" data-en="Developer & Mechatronics Engineer">Developer &amp; Mechatronics Engineer</span>
+          </p>
+          <h1 class="hero-name">
+            <span class="name-line" data-th="ธีรภัทร์" data-en="Thiraphat">Thiraphat</span>
+            <span class="name-line name-line--accent" data-th="ลัดดา" data-en="Ladda">Ladda</span>
+          </h1>
+          <p class="hero-typed-wrap">
+            <span class="hero-typed" id="typedText"></span><span class="typed-cursor">|</span>
+          </p>
+          <div class="hero-btns">
+            <a href="#work" class="btn-primary" data-th="ดูผลงาน" data-en="View Work">ดูผลงาน</a>
+            <a href="#contact" class="btn-ghost" data-th="ติดต่อฉัน" data-en="Contact Me">ติดต่อฉัน</a>
+          </div>
+        </div>
+        <div class="hero-right">
+          <div class="profile-ring-wrap">
+            <div class="profile-ring"></div>
+            <div class="profile-ring profile-ring--2"></div>
+            <img src="profile.jpg" alt="Thiraphat Ladda" class="profile-img"/>
+            <div class="profile-badge" data-th="พร้อมรับงาน" data-en="Open to Work">พร้อมรับงาน</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-scroll-hint">
+        <span data-th="เลื่อนลง" data-en="Scroll">เลื่อนลง</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════
+         SECTION 2 — ABOUT
+    ════════════════════════════ -->
+    <section class="snap-section about-section" id="about">
+      <div class="section-inner">
+        <div class="about-grid">
+          <div class="about-img-col reveal-left">
+            <div class="about-img-frame">
+              <img src="profile.jpg" alt="Thiraphat" class="about-img"/>
+              <div class="about-img-accent"></div>
+            </div>
+          </div>
+          <div class="about-text-col reveal-right">
+            <span class="section-eyebrow" data-th="เกี่ยวกับฉัน" data-en="About Me">เกี่ยวกับฉัน</span>
+            <h2 class="section-title" data-th="สวัสดีครับ<br/>ผมธีรภัทร์ ลัดดา" data-en="Hello, I'm <br/>Thiraphat Ladda">สวัสดีครับ<br/>ผมธีรภัทร์ ลัดดา</h2>
+            <p class="about-desc" data-th="บัณฑิตวิศวกรรมเมคคาทรอนิกส์ มหาวิทยาลัยมหาสารคาม ผมกำลังพัฒนาซอฟต์แวร์และระบบอัตโนมัติ ตั้งแต่เว็บแอปพลิเคชันไปจนถึงหุ่นยนต์และ IoT" data-en="Mechatronics Engineering graduate from Mahasarakham University. Passionate about software development and automation — from web apps to robotics and IoT.">บัณฑิตวิศวกรรมเมคคาทรอนิกส์ มหาวิทยาลัยมหาสารคาม ผมกำลังพัฒนาซอฟต์แวร์และระบบอัตโนมัติ ตั้งแต่เว็บแอปพลิเคชันไปจนถึงหุ่นยนต์และ IoT</p>
+            <div class="about-cards">
+              <div class="acard">
+                <span class="acard-icon">🎓</span>
+                <div>
+                  <p class="acard-title" data-th="การศึกษา" data-en="Education">การศึกษา</p>
+                  <p class="acard-val" data-th="วศ.บ. เมคคาทรอนิกส์" data-en="B.Eng. Mechatronics">วศ.บ. เมคคาทรอนิกส์</p>
+                  <p class="acard-sub" data-th="มหาวิทยาลัยมหาสารคาม" data-en="Mahasarakham University">มหาวิทยาลัยมหาสารคาม</p>
+                </div>
+              </div>
+              <div class="acard">
+                <span class="acard-icon">📍</span>
+                <div>
+                  <p class="acard-title" data-th="ที่อยู่" data-en="Location">ที่อยู่</p>
+                 <p class="acard-val" data-th="ร้อยเอ็ด, ประเทศไทย" data-en="Roi Et, Thailand">ร้อยเอ็ด, ประเทศไทย</p>
+                </div>
+              </div>
+              <div class="acard">
+                <span class="acard-icon">💼</span>
+                <div>
+                  <p class="acard-title" data-th="สถานะ" data-en="Status">สถานะ</p>
+                  <p class="acard-val acard-val--green" data-th="พร้อมรับงาน" data-en="Open to Work">พร้อมรับงาน</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════
+         SECTION 3 — SKILLS
+    ════════════════════════════ -->
+    <section class="snap-section skills-section" id="skills">
+      <div class="section-inner">
+        <div class="section-header reveal-up">
+          <span class="section-eyebrow" data-th="ความสามารถ" data-en="Capabilities">ความสามารถ</span>
+          <h2 class="section-title" data-th="ทักษะ & เทคโนโลยี" data-en="Skills & Technologies">ทักษะ & เทคโนโลยี</h2>
+        </div>
+        <div class="skills-grid reveal-up">
+          <div class="skill-track">
+            <div class="skill-track-label" data-th="Frontend" data-en="Frontend">Frontend</div>
+            <div class="skill-bars">
+              <div class="sbar" data-label="HTML / CSS" data-pct="90"></div>
+              <div class="sbar" data-label="JavaScript" data-pct="82"></div>
+              <div class="sbar" data-label="React / Vue" data-pct="75"></div>
+            </div>
+          </div>
+          <div class="skill-track">
+            <div class="skill-track-label" data-th="Backend" data-en="Backend">Backend</div>
+            <div class="skill-bars">
+              <div class="sbar" data-label="Node.js" data-pct="78"></div>
+              <div class="sbar" data-label="Python" data-pct="80"></div>
+              <div class="sbar" data-label="PHP" data-pct="65"></div>
+            </div>
+          </div>
+          <div class="skill-track">
+            <div class="skill-track-label" data-th="Robotics & IoT" data-en="Robotics & IoT">Robotics &amp; IoT</div>
+            <div class="skill-bars">
+              <div class="sbar" data-label="Arduino / C++" data-pct="85"></div>
+              <div class="sbar" data-label="Raspberry Pi" data-pct="70"></div>
+              <div class="sbar" data-label="Embedded Sys" data-pct="72"></div>
+            </div>
+          </div>
+          <div class="skill-track">
+            <div class="skill-track-label" data-th="Tools" data-en="Tools">Tools</div>
+            <div class="skill-bars">
+              <div class="sbar" data-label="Git / GitHub" data-pct="88"></div>
+              <div class="sbar" data-label="VS Code" data-pct="92"></div>
+              <div class="sbar" data-label="Figma" data-pct="60"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════
+         SECTION 4 — WORK
+    ════════════════════════════ -->
+    <section class="snap-section work-section" id="work">
+  <div class="section-inner">
+    <div class="section-header reveal-up">
+      <span class="section-eyebrow" data-th="ผลงาน" data-en="Work">ผลงาน</span>
+      <h2 class="section-title" data-th="T-MOBICARE" data-en="T-MOBICARE">T-MOBICARE</h2>
+    </div>
+
+    <div class="project-showcase reveal-up">
+      <div class="project-img-side">
+        <img src="123456789.jpg" alt="T-MOBICARE" class="project-img"/>
+        <div class="project-img-label">01</div>
+      </div>
+
+      <div class="project-info-side">
+        <div class="project-tags">
+          <span class="ptag">Mobile Repair</span>
+          <span class="ptag">Web Development</span>
+          <span class="ptag">IT Service</span>
+          <span class="ptag">Engineering</span>
+        </div>
+
+        <h3 class="project-title"
+            data-th="T-MOBICARE"
+            data-en="T-MOBICARE">
+          T-MOBICARE
+        </h3>
+
+        <p class="project-desc"
+           data-th="T-MOBICARE เป็นธุรกิจที่ผมก่อตั้งและพัฒนา โดยมุ่งเน้นการให้บริการซ่อมโทรศัพท์มือถือ พัฒนาเว็บไซต์ งานด้านไอที และงานวิศวกรรม เพื่อช่วยให้ลูกค้าและธุรกิจเข้าถึงเทคโนโลยีได้อย่างมีประสิทธิภาพ พร้อมมุ่งพัฒนาบริการและคุณภาพงานอย่างต่อเนื่อง"
+           data-en="T-MOBICARE is a business that I am currently building and developing. The services include mobile phone repair, website development, IT solutions, and engineering services. My goal is to provide reliable technology solutions while continuously improving service quality and customer experience.">
+          T-MOBICARE เป็นธุรกิจที่ผมก่อตั้งและพัฒนา โดยมุ่งเน้นการให้บริการซ่อมโทรศัพท์มือถือ พัฒนาเว็บไซต์ งานด้านไอที และงานวิศวกรรม เพื่อช่วยให้ลูกค้าและธุรกิจเข้าถึงเทคโนโลยีได้อย่างมีประสิทธิภาพ พร้อมมุ่งพัฒนาบริการและคุณภาพงานอย่างต่อเนื่อง
+        </p>
+
+        <a href="https://www.facebook.com/profile.php?id=61572163743566&locale=th_TH"
+           target="_blank"
+           class="btn-primary"
+           data-th="ติดต่อใช้บริการ →"
+           data-en="Contact for Services →"
+           rel="noopener">
+          ติดต่อใช้บริการ →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- ═══════════════════════════
+         SECTION 5 — CONTACT
+    ════════════════════════════ -->
+    <section class="snap-section contact-section" id="contact">
+      <div class="section-inner">
+        <div class="section-header reveal-up">
+          <span class="section-eyebrow" data-th="ติดต่อฉัน" data-en="Get in Touch">ติดต่อ</span>
+          <h2 class="section-title" data-th="สามารถติดต่อหรือเยี่ยมชมช่องทางออนไลน์ของฉันได้ด้านล่าง" data-en="You can find my contact and online profiles below."> สามารถติดต่อหรือเยี่ยมชมช่องทางออนไลน์ของฉันได้ด้านล่าง</h2>
+          <p class="contact-sub" data-th="พร้อมรับโอกาสใหม่เสมอครับ ติดต่อผ่านช่องทางที่สะดวกได้เลย" data-en="Always open to new opportunities. Reach out through any channel you prefer.">พร้อมรับโอกาสใหม่เสมอครับ ติดต่อผ่านช่องทางที่สะดวกได้เลย</p>
+        </div>
+        <div class="contact-links reveal-up">
+          <a href="mailto:?subject=Hello%20Thiraphat" class="clink">
+            <span class="clink-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7" stroke-linecap="round"/></svg>
+            </span>
+            <div class="clink-body">
+              <p class="clink-name" data-th="ส่งอีเมล" data-en="Email">ส่งอีเมล</p>
+              <p class="clink-sub" data-th="เปิด Mail App ทันที" data-en="Opens your mail app">เปิด Mail App ทันที</p>
+            </div>
+            <span class="clink-arrow">→</span>
+          </a>
+          <a href="https://github.com/ThiraphatNot" target="_blank" class="clink"rel="noopener">
+            <span class="clink-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+            </span>
+            <div class="clink-body">
+              <p class="clink-name">GitHub</p>
+              <p class="clink-sub">ThiraphatNot</p>
+            </div>
+            <span class="clink-arrow">→</span>
+          </a>
+          <a href="https://www.instagram.com/404x_23/" target="_blank" class="clink" rel="noopener">
+            <span class="clink-icon clink-icon--ig">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </span>
+            <div class="clink-body">
+              <p class="clink-name">Instagram</p>
+              <p class="clink-sub">@404x_23</p>
+            </div>
+            <span class="clink-arrow">→</span>
+          </a>
+          <a href="https://www.facebook.com/thiraphat.179889" target="_blank" class="clink" rel="noopener">
+            <span class="clink-icon clink-icon--fb">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </span>
+            <div class="clink-body">
+              <p class="clink-name">Facebook</p>
+              <p class="clink-sub">Thiraphat Ladda</p>
+            </div>
+            <span class="clink-arrow">→</span>
+          </a>
+        </div>
+        <footer class="site-footer">
+          <img src="logo.png" alt="logo" class="footer-logo"/>
+          <p class="footer-copy" data-th=" © 2026 Thiraphat Ladda" data-en=" © 2026 Thiraphat Ladda"> © 2026 Thiraphat Ladda</p>
+        </footer>
+      </div>
+    </section>
+
+  </main><!-- /scroll-container -->
+
+  <script src="script.js"></script>
+</body>
+</html>
