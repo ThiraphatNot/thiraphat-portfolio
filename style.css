@@ -497,3 +497,32 @@ ul { list-style: none; }
   }
 
 }
+
+@media (max-width: 768px) {
+
+  .contact-section {
+    height: auto;
+  }
+
+  .contact-section .section-inner {
+    height: auto;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .hero-name {
+    font-size: 2.3rem;
+  }
+
+  .hero-typed-wrap {
+    font-size: .9rem;
+  }
+
+  .hero-btns {
+    flex-direction: column;
+    align-items: center;
+  }
+
+}
