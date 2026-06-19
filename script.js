@@ -38,6 +38,7 @@ function applyLang(l) {
     if (v) el.innerHTML = v;
   });
   startTyping();
+  setTimeout(checkSectionOverflow, 50);
 }
 
 langBtn && langBtn.addEventListener('click', () => applyLang(lang === 'th' ? 'en' : 'th'));
@@ -186,6 +187,29 @@ const io = new IntersectionObserver(entries => {
 
 sections.forEach(s => io.observe(s));
 
+/* ── NAV SHADOW + BACK TO TOP ── */
+const navEl       = document.getElementById('nav');
+const backToTop    = document.getElementById('backToTop');
+
+function updateScrollUI() {
+  const top = container ? container.scrollTop : (window.scrollY || document.documentElement.scrollTop);
+  navEl && navEl.classList.toggle('nav--scrolled', top > 8);
+  backToTop && backToTop.classList.toggle('show', curIdx > 0 || top > window.innerHeight * .6);
+}
+
+if (container) container.addEventListener('scroll', updateScrollUI, { passive: true });
+window.addEventListener('scroll', updateScrollUI, { passive: true });
+backToTop && backToTop.addEventListener('click', () => goTo(0));
+
+/* ── OVERFLOW FALLBACK: force free-scroll on any device/zoom level
+   where a section's content is taller than the viewport ── */
+function checkSectionOverflow() {
+  const tooTall = sections.some(s => s.scrollHeight > window.innerHeight + 4);
+  html.classList.toggle('no-snap', tooTall || window.innerWidth <= 768);
+}
+window.addEventListener('resize', checkSectionOverflow);
+window.addEventListener('load', () => setTimeout(checkSectionOverflow, 200));
+
 /* ── REVEAL ── */
 function triggerReveal(sec) {
   sec.querySelectorAll('.reveal-up,.reveal-left,.reveal-right').forEach((el, i) => {
@@ -237,11 +261,13 @@ const navLinks = document.getElementById('navLinks');
 if (burger && navLinks) {
   burger.addEventListener('click', () => {
     const open = navLinks.classList.toggle('open');
+    burger.classList.toggle('open', open);
     document.body.style.overflow = open ? 'hidden' : '';
   });
   navLinks.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => {
       navLinks.classList.remove('open');
+      burger.classList.remove('open');
       document.body.style.overflow = '';
     });
   });
@@ -252,3 +278,5 @@ buildBars();
 applyLang(lang);
 triggerReveal(sections[0]);
 setActive(0);
+checkSectionOverflow();
+updateScrollUI();
