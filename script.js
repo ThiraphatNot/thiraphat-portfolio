@@ -274,6 +274,36 @@ if (burger && navLinks) {
   });
 }
 
+
+/* ── DAYS TOGETHER ── */
+function updateDaysTogether() {
+
+  // วันที่เริ่มคบ
+  const startDate = new Date(2026, 4, 29);
+
+  // วันที่ปัจจุบัน
+  const today = new Date();
+
+  // ตัดเวลาออก
+  startDate.setHours(0, 0, 0, 0);
+  today.setHours(0, 0, 0, 0);
+
+  // คำนวณจำนวนวัน
+  const diffDays = Math.floor(
+    (today - startDate) /
+    (1000 * 60 * 60 * 24)
+  );
+
+  // หา span ที่จะแสดงผล
+  const daysEl =
+    document.getElementById("daysTogether");
+
+  // แสดงจำนวนวัน
+  if (daysEl) {
+    daysEl.textContent = diffDays;
+  }
+}
+
 /* ── INIT ── */
 buildBars();
 applyLang(lang);
@@ -281,3 +311,6 @@ triggerReveal(sections[0]);
 setActive(0);
 checkSectionOverflow();
 updateScrollUI();
+updateDaysTogether();
+
+updateDaysTogether();
