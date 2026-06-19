@@ -158,7 +158,7 @@ ul { list-style: none; }
   border: 1px solid var(--border);
   border-radius: 30px;
   box-shadow: var(--shadow);
-    transition: background .4s, border-color .4s;
+  transition: background .4s, border-color .4s;
 }
 .dot {
   width: 8px; height: 8px; border-radius: 50%;
@@ -179,8 +179,8 @@ ul { list-style: none; }
 }
 .scroll-container,
 body {
-  scrollbar-color: var(--blue) transparent;
   scrollbar-width: thin;
+  scrollbar-color: var(--blue) transparent;
 }
 .scroll-container::-webkit-scrollbar,
 body::-webkit-scrollbar { width: 9px; height: 9px; }
@@ -411,7 +411,7 @@ body::-webkit-scrollbar-thumb:hover { background: var(--blue-dark); background-c
   transition: box-shadow .3s, background .4s;
 }
 .project-showcase:hover { box-shadow: var(--shadow-lg); }
-.project-img-side { position: relative; min-height: 360px; overflow: hidden; }
+.project-img-side { position: relative; min-height: 360px; overflow: hidden; background: #fff; }
 .project-img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s var(--ease); }
 .project-showcase:hover .project-img { transform: scale(1.04); }
 .project-img-label {
@@ -564,7 +564,7 @@ html.no-snap .contact-section .section-inner { height: auto; }
   .about-img-accent { inset: 14px -10px -10px 10px; }
   .skills-grid { grid-template-columns: 1fr; gap: 20px; }
   .project-showcase { grid-template-columns: 1fr; }
-  .project-img-side { min-height: 220px; }
+  .project-img-side { aspect-ratio: 16 / 11; height: auto; min-height: 0; }
   .project-info-side { padding: 24px; }
   .contact-links { grid-template-columns: 1fr; }
   .back-to-top { right: 18px; bottom: 20px; width: 44px; height: 44px; }
@@ -599,7 +599,7 @@ html.no-snap .contact-section .section-inner { height: auto; }
   .about-cards { gap: 10px; }
   .acard { padding: 12px 14px; }
   .about-img-frame { height: 200px; }
-  .project-img-side { min-height: 180px; }
+  .project-img-side { aspect-ratio: 4 / 3; height: auto; min-height: 0; }
   .project-info-side { padding: 20px; }
   .project-tags { gap: 6px; }
   .ptag { font-size: .66rem; padding: 4px 10px; }

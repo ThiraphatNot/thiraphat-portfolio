@@ -245,11 +245,12 @@ document.addEventListener('keydown', e => {
   if (e.key === 'ArrowUp'   || e.key === 'PageUp'  ) { e.preventDefault(); goTo(curIdx - 1); }
 });
 
-/* ── TOUCH SWIPE ── */
+/* ── TOUCH SWIPE (snap mode only — must not hijack normal free scrolling) ── */
 let ty0 = 0;
 if (container) {
   container.addEventListener('touchstart', e => { ty0 = e.touches[0].clientY; }, {passive:true});
   container.addEventListener('touchend',   e => {
+    if (html.classList.contains('no-snap') || window.innerWidth <= 1024) return;
     const diff = ty0 - e.changedTouches[0].clientY;
     if (Math.abs(diff) > 45) goTo(diff > 0 ? curIdx + 1 : curIdx - 1);
   }, {passive:true});
